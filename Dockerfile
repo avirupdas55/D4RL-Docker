@@ -39,7 +39,7 @@ mv $HOME/.mujoco/mujoco200_linux $HOME/.mujoco/mujoco200
 
 mv $HOME/mjkey.txt $HOME/.mujoco/mjkey.txt
 
-LD_LIBRARY_PATH=$HOME/.mujoco/mujoco200/bin:${LD_LIBRARY_PATH}
+LD_LIBRARY_PATH=/DiffRL/.mujoco/mujoco200/bin:${LD_LIBRARY_PATH}
 
 pip3 install gym
 pip3 install mujoco_py==2.0.2.8
@@ -48,8 +48,8 @@ python3 -m pip install -r requirements.txt
 EOF_DiffRL
 ### end of script
 
-ENV LD_LIBRARY_PATH=$HOME/.mujoco/mujoco200/bin:${LD_LIBRARY_PATH}
-
+ENV LD_LIBRARY_PATH=/DiffRL/.mujoco/mujoco200/bin:${LD_LIBRARY_PATH}
+ENV MUJOCO_PY_MUJOCO_PATH=/DiffRL/.mujoco/mujoco200
 
 # extra command to build mujoco-py
 ENV D4RL_SUPPRESS_IMPORT_ERROR=1
@@ -61,4 +61,4 @@ RUN echo 'set keymap vi' >> $HOME/.inputrc
 RUN echo "LD LIBRARY PATH: $LD_LIBRARY_PATH"
 RUN echo "Python version: $(python --version)"
 
-WORKDIR $HOME/diffrl
+WORKDIR /DiffRL/diffrl
