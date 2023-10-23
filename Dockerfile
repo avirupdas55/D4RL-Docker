@@ -19,6 +19,7 @@ ENV HOME=/DiffRL
 WORKDIR $HOME
 
 ADD D4RL $HOME/D4RL
+ADD mujoco-py $HOME/mujoco-py
 ADD mjkey.txt $HOME/mjkey.txt
 ADD requirements.txt $HOME/requirements.txt
 
@@ -26,11 +27,18 @@ ADD requirements.txt $HOME/requirements.txt
 RUN <<EOF_DiffRL
 pip3 install -U Cython==3.0.0a10
 
+cd $HOME/mujoco-py
+pip3 install --no-cache-dir -r requirements.txt
+pip3 install --no-cache-dir -r requirements.dev.txt
+python3 setup.py build 
+python3 setup.py install
+
 cd $HOME/D4RL
 pip3 install -e .
 
 cd $HOME
 mkdir $HOME/.mujoco
+cd $HOME
 
 wget -c https://www.roboti.us/download/mujoco200_linux.zip -O mujoco200.zip
 unzip mujoco200.zip -d $HOME/.mujoco/
@@ -41,8 +49,9 @@ mv $HOME/mjkey.txt $HOME/.mujoco/mjkey.txt
 
 LD_LIBRARY_PATH=/DiffRL/.mujoco/mujoco200/bin:${LD_LIBRARY_PATH}
 
+cd $HOME
 pip3 install gym
-pip3 install mujoco_py==2.0.2.8
+#pip3 install mujoco_py==2.0.2.8
 python3 -m pip install -r requirements.txt
 
 EOF_DiffRL
