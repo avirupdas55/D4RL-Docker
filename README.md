@@ -29,7 +29,12 @@ script, and replace the username with your dockerhub username.
 
 ### Running instructions.
 
-Scripts for running the included test.py file are given. On a system which has docker use:
+Scripts for running the included test.py file are given. These are for the example
+working docker container that has been created, at
+https://github.com/orgs/UoMResearchIT/packages/container/package/diffrl .
+
+
+On a system which has docker use:
 ```
 bash example_docker_run_script.sh
 ```
