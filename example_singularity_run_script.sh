@@ -4,6 +4,7 @@ singularity \
         --quiet \
         exec \
         --ipc \
+        --nv \
         --cleanenv \
         --pid \
         --bind \
