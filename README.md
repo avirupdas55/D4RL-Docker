@@ -38,7 +38,10 @@ On a system which has docker use:
 ```
 bash example_docker_run_script.sh
 ```
-On a system with singularity use:
+
+On a system with singularity you will need to create the directory `$HOME/.mujoco`
+(in your local home directory) and copy the `mjkey.txt` file into this directory.
+Then use the following script to run the example.:
 ```
 bash example_singularity_run_script.sh
 ```
