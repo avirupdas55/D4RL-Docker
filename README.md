@@ -25,3 +25,20 @@ bash docker_build.sh
 ```
 If you wish to upload the container to dockerhub then uncomment the last three lines of that
 script, and replace the username with your dockerhub username.
+
+
+### Running instructions.
+
+Scripts for running the included test.py file are given. On a system which has docker use:
+```
+bash example_docker_run_script.sh
+```
+On a system with singularity use:
+```
+bash example_singularity_run_script.sh
+```
+
+To run the original docker image use:
+```
+bash example_original_docker_run_script.sh
+```
