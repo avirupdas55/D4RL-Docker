@@ -9,6 +9,6 @@ singularity \
         --pid \
         --bind \
 	$BASEDIR/test.py:/DiffRL/diffrl/test.py \
-	docker://ghcr.io/uomresearchit/diffrl:pytorch \
+	docker://avirupdas55/diffrl:pytorch \
 	python3 /DiffRL/diffrl/test.py
 

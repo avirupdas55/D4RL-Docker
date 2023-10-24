@@ -3,5 +3,5 @@ BASEDIR=$(pwd)
 docker run \
 	-v \
 	$BASEDIR/test.py:/DiffRL/diffrl/test.py \
-	ghcr.io/uomresearchit/diffrl:pytorch \
+	docker://avirupdas55/diffrl:pytorch \
 	python3 test.py

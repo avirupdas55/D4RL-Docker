@@ -9,7 +9,7 @@ Cloning the D4RL repository:
 
 Cloning the mujoco-py repository, and switching to the modified 2.0.2.8 branch.
 ```
-git clone git@github.com:UoMResearchIT/mujoco-py.git
+git clone https://github.com/avirupdas55/mujoco-py.git
 cd mujoco-py
 git switch v2.0.2.8-local_update
 cd ..

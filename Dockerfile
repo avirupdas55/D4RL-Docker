@@ -1,6 +1,4 @@
 # syntax=docker/dockerfile:1.4.2
-
-
 FROM nvidia/cuda:11.8.0-runtime-ubuntu20.04
 
 ##### Install requirements
@@ -66,8 +64,5 @@ RUN python3 -c "import mujoco_py"
 RUN python3 -c "import d4rl"
 RUN echo 'set editing-mode vi' >> $HOME/.inputrc
 RUN echo 'set keymap vi' >> $HOME/.inputrc
-
-RUN echo "LD LIBRARY PATH: $LD_LIBRARY_PATH"
-RUN echo "Python version: $(python --version)"
 
 WORKDIR /DiffRL/diffrl
